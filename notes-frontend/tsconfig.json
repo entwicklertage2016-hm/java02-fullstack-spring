@@ -29,6 +29,10 @@
         ".tmp/typings/jquery/jquery.d.ts",
         ".tmp/typings/tsd.d.ts",
         "src/main/resources/frontend/scripts/app.ts",
+        "src/main/resources/frontend/scripts/entities/note.ts",
+        "src/main/resources/frontend/scripts/notes/_module.ts",
+        "src/main/resources/frontend/scripts/notes/notes.controller.ts",
+        "src/main/resources/frontend/scripts/notes/notes.service.ts",
         "src/main/resources/frontend/scripts/something.ts"
     ],
     "atom": {

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
 </head>
 
-<body>
+<body ng-app="notes" ng-controller="NotesController as notesController">
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -101,7 +101,7 @@
                                 <ul class="dropdown-menu pull-right" role="menu">
                                     <li><a href="#"><i class="fa fa-refresh "></i> Refresh</a>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-plus-circle"></i> Create note</a>
+                                    <li><a href="#" ng-click="notesController.create()"><i class="fa fa-plus-circle"></i> Create note</a>
                                     </li>
 
                                 </ul>
@@ -110,20 +110,56 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item" style="overflow:auto;">
-                                <div class="col-lg-12">
-                                    <div class="col-lg-9">
+                        <div ng-repeat="note in notesController.notes">
+                            <div class="list-group">
+                                <a href="#" ng-click="notesController.selectNote(note)" class="list-group-item" ng-class="{active: notesController.currentNote == note}" style="overflow:auto;">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-9">
+                                            <i class="fa fa-sticky-note-o fa-fw"></i> {{note.title}}
+                                        <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                        </span>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            Anselm
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-12" ng-if="notesController.currentNote == note">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
                                         <i class="fa fa-sticky-note-o fa-fw"></i> Todo liste
-                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
-                                    </span>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        Anselm
-                                    </div>
-                                </div>
-                            </a>
+                                        <div class="pull-right">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"
+                                                        data-toggle="dropdown">
+                                                    Actions
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right" role="menu">
+                                                    <li><a href="#"><i class="fa fa-refresh "></i> Refresh</a>
+                                                    </li>
+                                                    <li><a href="#" ng-click="notesController.delete(notesController.currentNote)"><i class="fa fa-remove"></i> Delete note</a>
+                                                    <li><a href="#"><i class="fa fa-share"></i> Share note</a>
+                                                    </li>
 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.panel-heading -->
+                                    <div class="panel-body">
+                                        <div class="list-group">
+                                            <div class="form-group">
+                                                <label>Title</label><input class="form-control" type="text" name="title" ng-model="notesController.currentNote.title">
+                                                <label>Note</label><textarea class="form-control" rows="5" id="comment"  ng-model="notesController.currentNote.content"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.panel-body -->
+                                </div>
+                                <!-- /.col-lg-4 -->
+                            </div>
                         </div>
                     </div>
                     <!-- /.panel-body -->
@@ -133,42 +169,6 @@
                 <!-- /.panel -->
             </div>
             <!-- /.col-lg-8 -->
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fa fa-sticky-note-o fa-fw"></i> Todo liste
-                        <div class="pull-right">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"
-                                        data-toggle="dropdown">
-                                    Actions
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu pull-right" role="menu">
-                                    <li><a href="#"><i class="fa fa-refresh "></i> Refresh</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-remove"></i> Delete note</a>
-                                    <li><a href="#"><i class="fa fa-share"></i> Share note</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div class="list-group">
-                            <div class="form-group">
-                                <label>Title</label><input class="form-control" type="text" name="title">
-                                <label>Note</label><textarea class="form-control" rows="5" id="comment"></textarea>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- /.panel-body -->
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
         </div>
 
     </div>
@@ -187,6 +187,7 @@
 
     <!-- bower:js -->
     <!-- endinject -->
+    <script src="app.js"></script>
 
 </body>
 </html>

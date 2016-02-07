@@ -1,9 +1,8 @@
+///<reference path="notes/_module.ts" />
+
+
 module Notes {
-    class Application {
 
-        public printHello(): void {
-            alert("Hello World");
-        }
+    angular.module("notes", ["notes.notes"]);
 
-    }
 }

@@ -1,1 +1,192 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Fixed Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="pull-left"><img class="center"
+                                               style="padding-bottom: 10px; padding-top: 10px;padding-right: 20px"
+                                               height="50" src="img/logo.png"></a>
+            <a class="navbar-brand" href="#">Notes</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">My notes</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Anselm <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Anselm Binninger</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#"></a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header"></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Notes</h1>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-folder fa-fw"></i> Categories
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-sticky-note-o fa-fw"></i> Private Notes
+                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    </span>
+                            </a>
+
+                        </div>
+                        <!-- /.list-group -->
+                        <a href="#" class="btn btn-default btn-block">Add new category</a>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+
+                <!-- /.panel .chat-panel -->
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-sticky-note-o fa-fw"></i> Notes
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"
+                                        data-toggle="dropdown">
+                                    Actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="#"><i class="fa fa-refresh "></i> Refresh</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-plus-circle"></i> Create note</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item" style="overflow:auto;">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-9">
+                                        <i class="fa fa-sticky-note-o fa-fw"></i> Todo liste
+                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    </span>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        Anselm
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+
+                <!-- /.panel -->
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-sticky-note-o fa-fw"></i> Todo liste
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"
+                                        data-toggle="dropdown">
+                                    Actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="#"><i class="fa fa-refresh "></i> Refresh</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-remove"></i> Delete note</a>
+                                    <li><a href="#"><i class="fa fa-share"></i> Share note</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <div class="form-group">
+                                <label>Title</label><input class="form-control" type="text" name="title">
+                                <label>Note</label><textarea class="form-control" rows="5" id="comment"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+        </div>
+
+    </div>
+    <div class="navbar navbar-static-bottom navbar-default">
+        <div class="text-center" style="padding-top: 10px">
+            <p class="text">
+                <i>Notes v 1.0.1</i><br>
+                <small>Softwareentwicklung für Fortgeschrittene | Entwicklertage 2016</small>
+            </p>
+            <img class="center" style="padding-bottom: 20px;" width="100" src="img/logo.png">
+        </div>
+
+    </div>
+    <!-- /container -->
+</div>
+
+    <!-- bower:js -->
+    <!-- endinject -->
+
+</body>
+</html>

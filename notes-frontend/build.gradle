@@ -1,5 +1,41 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'be.filipblondeel.gradle:gradle-gulp-plugin:0.1'
+        classpath "com.moowork.gradle:gradle-node-plugin:0.11"
+    }
+}
+
 apply plugin: "eclipse"
 apply plugin: "java"
+apply plugin: "gulp"
+apply plugin: 'com.moowork.node'
 
 dependencies {
+}
+
+def srcDir = new File(projectDir, "src/main/web")
+def targetDir = new File(project.buildDir, "web")
+gulp_default.inputs.dir "src/main/resources/frontend"
+gulp_default.outputs.dir "src/main/resources/static"
+
+task bowerDependencies(type: NodeTask) {
+	script = file('node_modules/bower/bin/bower')
+	args = ['install']
+}
+
+processResources.dependsOn gulp_default
+gulp_default.dependsOn npmInstall
+gulp_default.dependsOn bowerDependencies
+bowerDependencies.dependsOn npmInstall
+
+
+node {
+    // Version of node to use.
+    version = '4.2.6'
+
+    // Enabled the automatic download. False is the default (for now).
+    download = true
 }

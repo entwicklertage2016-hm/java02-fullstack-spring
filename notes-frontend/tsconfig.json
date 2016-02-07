@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        ".tmp/**/*ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "!node_modules/**",
+        "!build/**",
+        "!bin/**"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "files": [
+        ".tmp/typings/angularjs/angular.d.ts",
+        ".tmp/typings/jquery/jquery.d.ts",
+        ".tmp/typings/tsd.d.ts",
+        "src/main/resources/frontend/scripts/app.ts",
+        "src/main/resources/frontend/scripts/something.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

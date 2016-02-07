@@ -1,0 +1,53 @@
+$icon-font-path: "../lib/bootstrap-sass/assets/fonts/bootstrap/";
+
+$gray-base:               #393a3a;
+$brand-color:             #005169;
+$font-size-base:          14px;
+
+$gray-darker:            lighten($gray-base, 10.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         darken($brand-color, 6.5%); // #337ab7
+$brand-primary-lighter:   lighten($brand-color, 0.5%); // #eee
+$brand-primary-light:   lighten($brand-color, 70.5%); // #eee
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+
+$list-group-hover-bg:           $brand-primary-light !default;
+$list-group-link-hover-color:   $gray-dark !default;
+
+$text-muted:                  $gray-dark !default;
+$navbar-default-bg: $brand-primary;
+$navbar-default-color: $gray-lighter;
+$navbar-default-link-color: $gray-light;
+$navbar-default-link-active-color: $gray-lighter;
+$navbar-default-link-hover-color:          $gray-lighter !default;
+
+$jumbotron-heading-color:        $gray-dark !default;
+
+$panel-bg:                    $gray-lighter;
+$panel-primary-heading-bg:    $brand-primary-lighter !default;
+$panel-default-heading-bg:    $brand-primary-lighter !default;
+$panel-default-heading-text:  $gray-lighter !default;
+$headings-small-color:        $gray-lighter !default;
+$headings-color:          $gray-lighter !default;
+$panel-default-text:          $gray-lighter;
+
+/**
+ * Do not remove this comments bellow. It's the markers used by wiredep to inject
+ * sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+//===================================
+
+
+// injector
+// endinjector

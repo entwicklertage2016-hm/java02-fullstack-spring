@@ -1,10 +1,9 @@
+module Notes {
+    class Application {
 
-class Application {
+        public printHello(): void {
+            alert("Hello World");
+        }
 
-    public printHello(): void {
-        alert("Hello");
     }
-
 }
-
-var a = new Application();

@@ -9,4 +9,6 @@ bin
 .gradle
 build
 
+.tmp
+notes-frontend/src/main/resources/frontend/lib
 notes-frontend/src/main/resources/static

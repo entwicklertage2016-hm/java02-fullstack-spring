@@ -1,0 +1,31 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "browser-sync": "^2.11.1",
+    "browser-sync-spa": "^1.0.3",
+    "gulp": "^3.9.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-typescript": "^2.10.0",
+    "gulp-util": "^3.0.7",
+    "http-proxy-middleware": "^0.10.0",
+    "lodash": "^4.2.1",
+    "main-bower-files": "^2.11.1",
+    "node-sass": "^3.4.2",
+    "tsd": "^0.6.5",
+    "wiredep": "^3.0.0",
+    "wrench": "^1.5.8"
+  }
+}

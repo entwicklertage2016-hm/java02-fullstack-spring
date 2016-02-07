@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+dependencies {
+	runtime("org.hsqldb:hsqldb")
+	compile project(":notes-categories")
+	compile project(":notes-notes")
+	compile project(":notes-tags")
+    compile project(":notes-users")
+    compile project(":notes-frontend")
+}
+
+mainClassName = 'edu.hm.notes.NotesRunner'
+
+bootRepackage {
+	enabled = true
+}
+
+bootRun.enabled = true

@@ -1,0 +1,5 @@
+apply plugin: "eclipse"
+apply plugin: "java"
+
+dependencies {
+}

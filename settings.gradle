@@ -1,0 +1,8 @@
+
+include "notes-notes",
+		"notes-core",
+		"notes-runner",
+		"notes-tags",
+		"notes-categories",
+		"notes-users",
+		"notes-frontend"

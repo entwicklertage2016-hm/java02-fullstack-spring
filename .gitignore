@@ -1,0 +1,12 @@
+node_modules
+bower_components
+
+bin
+.classpath
+.project
+.settings
+
+.gradle
+build
+
+notes-frontend/src/main/resources/static

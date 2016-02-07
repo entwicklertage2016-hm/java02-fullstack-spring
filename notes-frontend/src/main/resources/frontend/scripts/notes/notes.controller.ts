@@ -3,6 +3,8 @@ module Notes {
     export class NotesController {
 
         private notesService: NotesService;
+        private $scope: ng.IScope;
+        private selectedCategory: Category = null;
         public notes: Note[] = [];
         public currentNote: Note;
         private saveCurrentItemTimeout: ng.IPromise<any>;
@@ -12,13 +14,20 @@ module Notes {
             this.notesService = notesService;
             this.$interval = $interval;
 
-            notesService.get().then((notes) => {
+            //this.$scope.$on("categories.selected", (event: ng.IAngularEvent, category: Category) => this.displayNotes(category));
+            this.notesService.get().then((notes: Note[]) => {
                 this.notes = notes;
-                this.currentNote = notes[0];
-            })
+            });
 
-            this.saveCurrentItemTimeout = $interval(() => this.onSaveInterval(), 500);
+            this.saveCurrentItemTimeout = $interval(() => this.onSaveInterval(), 5000);
             $scope.$on('delete', () => this.onDelete());
+        }
+
+        public displayNotes(category: Category) {
+            this.selectedCategory = category;
+            this.notesService.findNotesByCategory(category).then((notes: Note[]) => {
+                this.notes = notes;
+            });
         }
 
         private onSaveInterval() {

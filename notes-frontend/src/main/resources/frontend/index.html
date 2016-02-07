@@ -68,22 +68,29 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-folder fa-fw"></i> Categories
-                        <div class="pull-right">
-                            <i ng-click="categoriesController.create()" class="fa fa-plus-circle pointer"></i>
-                        </div>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="list-group">
-                            <a href="#" class="list-group-item">
-                                <i class="fa fa-sticky-note-o fa-fw"></i> Private Notes
-                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                            <a ng-click="categoriesController.select(category)" ng-repeat="category in categoriesController.categories" href="#" class="list-group-item" ng-class="{active: categoriesController.selectedCategory === category}">
+                                <i class="fa fa-sticky-note-o fa-fw"></i> {{category.title}}
+                                    <span class="pull-right text-muted small">
+                                        <em>4 minutes ago</em>
+                                        <i ng-click="categoriesController.delete(category)" class="fa fa-times"></i>
                                     </span>
                             </a>
 
                         </div>
                         <!-- /.list-group -->
-                        <a href="#" class="btn btn-default btn-block">Add new category</a>
+                        <div ng-if="categoriesController.isCreatingNewCategory" class="input-group">
+                            <input ng-model="categoriesController.newCategory.title" type="text" class="form-control" aria-label="...">
+                            <div class="input-group-btn">
+                                <button ng-click="categoriesController.saveNew()" class="btn btn-default" type="button"><i class="fa fa-check"></i></button>
+                                <button ng-click="categoriesController.resetNew()" class="btn btn-default" type="button"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <button ng-if="!categoriesController.isCreatingNewCategory" ng-click="categoriesController.createNew()" class="btn btn-default btn-block">Add new category</button>
                     </div>
                     <!-- /.panel-body -->
                 </div>

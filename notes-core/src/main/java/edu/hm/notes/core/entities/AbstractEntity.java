@@ -1,8 +1,13 @@
 package edu.hm.notes.core.entities;
 
+import java.util.Date;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 @MappedSuperclass
 abstract class AbstractEntity {
@@ -11,6 +16,11 @@ abstract class AbstractEntity {
 	@GeneratedValue
 	private Integer id;
 	
+	@LastModifiedDate
+	private Date createdAt;
+	@CreatedDate
+	private Date modifiedAt;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -18,4 +28,22 @@ abstract class AbstractEntity {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getModifiedAt() {
+		return modifiedAt;
+	}
+
+	public void setModifiedAt(Date modifiedAt) {
+		this.modifiedAt = modifiedAt;
+	}
+	
+	
 }

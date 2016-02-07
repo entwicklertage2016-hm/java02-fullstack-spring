@@ -1,12 +1,14 @@
 /// <reference path="../entities/note.ts" />
+/// <reference path="../common/abstract.service.ts" />
 
 module Notes {
 
-    export class NotesService {
+    export class NotesService extends AbstractService {
 
         private $http: ng.IHttpService
 
         public constructor($http: ng.IHttpService) {
+            super();
             this.$http = $http;
         }
 
@@ -30,8 +32,12 @@ module Notes {
             return this.$http.delete(this.getSelfLink(note));
         }
 
-        private getSelfLink(note: Note) : string{
-            return note._links.self.href;
+        public findNotesByCategory(category: Category) {
+            return this.$http.get("/api/notes/search/findByCategory?category=" + this.getSelfLink(category))
+                                .then((response: ng.IHttpPromiseCallbackArg<any[]>) => {
+                                    console.log(response);
+                                    return response.data;
+                                });
         }
     }
 

@@ -3,6 +3,7 @@ package edu.hm.notes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.core.event.ValidatingRepositoryEventListener;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
@@ -10,6 +11,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 import edu.hm.notes.notes.BeforeCreateNoteValidator;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class NotesRunner extends RepositoryRestMvcConfiguration {
 	
 	@Autowired BeforeCreateNoteValidator beforeCreateNoteValidator;

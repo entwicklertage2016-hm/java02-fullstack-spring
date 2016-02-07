@@ -1,5 +1,5 @@
-///<reference path="notes.controller.ts" />
-///<reference path="notes.service.ts" />
+///<reference path="categories.controller.ts" />
+///<reference path="categories.service.ts" />
 
 module Notes {
 

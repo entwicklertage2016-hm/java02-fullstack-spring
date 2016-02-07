@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Note extends AbstractEntity {
@@ -12,7 +13,17 @@ public class Note extends AbstractEntity {
 	private String content;
 	@ManyToOne
 	private User owner;
+	@ManyToOne
+	private Category category;
 	private Date dueDate;
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
 	public String getTitle() {
 		return title;

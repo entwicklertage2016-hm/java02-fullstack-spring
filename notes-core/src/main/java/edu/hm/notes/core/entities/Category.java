@@ -1,12 +1,25 @@
 package edu.hm.notes.core.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category extends AbstractEntity {
 
 	private String title;
 	private boolean isPublic;
+	@OneToMany
+	private List<Note> notes;
+
+	public List<Note> getNotes() {
+		return notes;
+	}
+
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
+	}
 
 	public String getTitle() {
 		return title;

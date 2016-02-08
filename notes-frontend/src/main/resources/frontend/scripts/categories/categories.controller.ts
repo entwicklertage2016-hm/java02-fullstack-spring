@@ -16,7 +16,7 @@ module Notes {
 
             categoriesService.get().then((categories: Category[]) => {
                 this.categories = categories;
-                this.selectedCategory = categories[0];
+                this.select(categories[0]);
             });
         }
 
@@ -33,6 +33,7 @@ module Notes {
             this.categoriesService.post(this.newCategory).then((category: Category) => {
                 this.categories.push(category);
                 this.resetNew();
+                this.select(category);
             });
         }
 
@@ -44,6 +45,7 @@ module Notes {
         public delete(categoryToDelete: Category) {
             this.categoriesService.delete(categoryToDelete).then(() => {
                 this.categories = this.categories.filter((category) => category !== categoryToDelete);
+                this.select(this.categories[0]);
             });
         }
 

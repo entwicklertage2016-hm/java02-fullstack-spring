@@ -1,7 +1,7 @@
 $icon-font-path: "../lib/bootstrap-sass/assets/fonts/bootstrap/";
 
 $gray-base:               #393a3a;
-$brand-color:             #005169;
+$brand-color:             #668899;
 $font-size-base:          14px;
 
 $gray-darker:            lighten($gray-base, 10.5%); // #222
@@ -50,6 +50,14 @@ $panel-default-text:          $gray-lighter;
 
 .pointer {
     cursor: pointer;
+}
+
+.active .text-muted {
+    color: $gray-light;
+}
+
+.navbar-static-bottom {
+    color: $gray-lighter;
 }
 
 

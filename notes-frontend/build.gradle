@@ -21,6 +21,10 @@ def targetDir = new File(project.buildDir, "web")
 gulp_default.inputs.dir "src/main/resources/frontend"
 gulp_default.outputs.dir "src/main/resources/static"
 
+task frontend() {
+}
+frontend.dependsOn gulp_serve
+
 task bowerDependencies(type: NodeTask) {
 	script = file('node_modules/bower/bin/bower')
 	args = ['install']
@@ -30,7 +34,6 @@ processResources.dependsOn gulp_default
 gulp_default.dependsOn npmInstall
 gulp_default.dependsOn bowerDependencies
 bowerDependencies.dependsOn npmInstall
-
 
 node {
     // Version of node to use.

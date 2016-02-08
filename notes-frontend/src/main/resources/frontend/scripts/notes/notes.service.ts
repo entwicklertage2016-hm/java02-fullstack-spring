@@ -34,9 +34,8 @@ module Notes {
 
         public findNotesByCategory(category: Category) {
             return this.$http.get("/api/notes/search/findByCategory?category=" + this.getSelfLink(category))
-                                .then((response: ng.IHttpPromiseCallbackArg<any[]>) => {
-                                    console.log(response);
-                                    return response.data;
+                                .then((response: ng.IHttpPromiseCallbackArg<any>) => {
+                                    return response.data._embedded.notes;
                                 });
         }
     }

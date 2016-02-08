@@ -13,9 +13,10 @@ module Notes {
         public constructor(notesService: NotesService, $interval: ng.IIntervalService, $scope: ng.IScope) {
             this.notesService = notesService;
             this.$interval = $interval;
+            this.$scope = $scope;
 
-            //this.$scope.$on("categories.selected", (event: ng.IAngularEvent, category: Category) => this.displayNotes(category));
-            this.notesService.get().then((notes: Note[]) => {
+            $scope.$on("categories.selected", (event: ng.IAngularEvent, category: Category) => this.displayNotes(category));
+            notesService.get().then((notes: Note[]) => {
                 this.notes = notes;
             });
 
@@ -24,6 +25,7 @@ module Notes {
         }
 
         public displayNotes(category: Category) {
+            console.log("displayNotes", category)
             this.selectedCategory = category;
             this.notesService.findNotesByCategory(category).then((notes: Note[]) => {
                 this.notes = notes;
@@ -54,7 +56,9 @@ module Notes {
         }
 
         public create() {
-            this.notesService.post(new Note()).then((note: Note) => {
+            let newNote = new Note();
+            newNote.category = this.notesService.getSelfLink(this.selectedCategory)
+            this.notesService.post(newNote).then((note: Note) => {
                 this.notes.push(note);
                 this.currentNote = note;
             });

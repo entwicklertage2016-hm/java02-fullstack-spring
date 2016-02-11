@@ -12,3 +12,7 @@ build
 .tmp
 notes-frontend/src/main/resources/frontend/lib
 notes-frontend/src/main/resources/static
+
+notes-frontend/src/test/resources/*
+notes-frontend/!src/test/resources/test.html
+notes-frontend/!src/test/resources/jasmine/

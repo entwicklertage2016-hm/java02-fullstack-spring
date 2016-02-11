@@ -22,6 +22,7 @@
     }
   },
   "devDependencies": {
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "jasmine-core": "jasmine#~2.4.1"
   }
 }

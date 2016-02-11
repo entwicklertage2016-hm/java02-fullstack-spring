@@ -28,16 +28,9 @@
         ".tmp/typings/angularjs/angular.d.ts",
         ".tmp/typings/jquery/jquery.d.ts",
         ".tmp/typings/tsd.d.ts",
-        "src/main/resources/frontend/scripts/app.ts",
-        "src/main/resources/frontend/scripts/categories/_module.ts",
-        "src/main/resources/frontend/scripts/categories/categories.controller.ts",
-        "src/main/resources/frontend/scripts/categories/categories.service.ts",
-        "src/main/resources/frontend/scripts/common/abstract.service.ts",
-        "src/main/resources/frontend/scripts/entities/category.ts",
-        "src/main/resources/frontend/scripts/entities/note.ts",
-        "src/main/resources/frontend/scripts/notes/_module.ts",
-        "src/main/resources/frontend/scripts/notes/notes.controller.ts",
-        "src/main/resources/frontend/scripts/notes/notes.service.ts"
+        "src/main/resources/frontend/scripts/file1.ts",
+        "src/main/resources/frontend/scripts/file2.ts",
+        "src/test/spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

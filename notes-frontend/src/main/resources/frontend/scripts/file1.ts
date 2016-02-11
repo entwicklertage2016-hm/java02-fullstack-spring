@@ -1,21 +1,52 @@
 module Notes {
 
-    interface ITestInterface {
-        someMethod(parameter: number);
+    class Category {
+        public title: String = "";
     }
 
-    export class Test implements ITestInterface {
-		public property = true;
+    class CategoriesController {
+        public categories : Category[] = [];
+        public newCategoryName = "";
+        public isCreatingNewCategory = false;
+        public selectedCategory: Category;
 
-        public someMethod(parameter: number) {
-            return parameter;
+        public constructor() {
+            let category = new Category();
+            category.title = "Standardkategorie";
+            this.categories.push(category);
+            this.selectedCategory = this.categories[0];
         }
 
-        public constructor(aProperty: boolean) {
-            this.property = aProperty;
+        public select(category: Category) {
+            this.selectedCategory = category;
         }
-	}
 
-    var testInstance = new Test(true);
+        public delete(category: Category) {
+            let index = this.categories.indexOf(category);
+            this.categories.splice(index, 1);
+        }
+
+        public cancel() {
+            this.newCategoryName = "";
+            this.isCreatingNewCategory = false;
+        }
+
+        public createNewCategory() {
+            this.isCreatingNewCategory = true;
+        }
+
+        public saveNewCategory() {
+            let category = new Category();
+            category.title = this.newCategoryName;
+            this.categories.push(category);
+            this.cancel();
+        }
+
+    }
+
+    angular.module("notes", [])
+            .controller("CategoriesController", CategoriesController);
+
+
 
 }

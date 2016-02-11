@@ -2,6 +2,5 @@
 
 module Notes {
 
-    let a = new Test(true);
 
 }

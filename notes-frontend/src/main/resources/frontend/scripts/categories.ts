@@ -1,6 +1,6 @@
 module Notes {
 
-    class Category {
+    export class Category {
         public title: String = "";
     }
 
@@ -44,7 +44,7 @@ module Notes {
 
     }
 
-    angular.module("notes", [])
+    angular.module("notes.categories", [])
             .controller("CategoriesController", CategoriesController);
 
 

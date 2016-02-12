@@ -28,8 +28,9 @@
         ".tmp/typings/angularjs/angular.d.ts",
         ".tmp/typings/jquery/jquery.d.ts",
         ".tmp/typings/tsd.d.ts",
-        "src/main/resources/frontend/scripts/file1.ts",
-        "src/main/resources/frontend/scripts/file2.ts",
+        "src/main/resources/frontend/scripts/app.ts",
+        "src/main/resources/frontend/scripts/categories.ts",
+        "src/main/resources/frontend/scripts/notes.ts",
         "src/test/spec.ts"
     ],
     "atom": {

@@ -23,7 +23,7 @@ public class NotesRunner extends RepositoryRestMvcConfiguration {
 	@Autowired BeforeCreateNoteValidator beforeCreateNoteValidator;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(NotesRunner.class);
+		SpringApplication.run(NotesRunner.class, args);
 	}
 	
 	@Override

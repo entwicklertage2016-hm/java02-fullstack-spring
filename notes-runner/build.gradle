@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'application'
 
 dependencies {
-	runtime("org.hsqldb:hsqldb")
+	compile("com.h2database:h2")
 	compile project(":notes-categories")
 	compile project(":notes-notes")
 	compile project(":notes-tags")
